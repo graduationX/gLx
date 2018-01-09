@@ -34,13 +34,16 @@
 <tr><td>姓名</td>
 	<td>性别</td>
 	<td>密码</td>
+	<td>生日</td>
 </tr>
 <c:forEach items="${slist }" var="list">
 <tr>
 <td>${list.name }</td>
 <td>${list.sex }</td>
 <td>${list.password }</td>
-</tr>
+<td> <fmt:formatDate value="${list.birthday }" pattern="yyyy-MM-dd"/></td></tr>
+
+
 </c:forEach>
 </table>
 </body>

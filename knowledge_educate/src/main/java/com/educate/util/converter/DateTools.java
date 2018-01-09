@@ -1,4 +1,4 @@
-package com.educate.util;
+package com.educate.util.converter;
 
 import java.text.SimpleDateFormat;
 import java.util.Collection;
