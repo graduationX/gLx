@@ -45,11 +45,12 @@
 		<property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml" />
 	</bean>
 
-	<!-- mapper扫描器
+	<!-- mapper扫描器 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage"
-			value=""></property>
+			value="com.educate.mapper"></property>
+		
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-	</bean> -->
+	</bean> 
 
 </beans>
