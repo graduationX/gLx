@@ -9,6 +9,12 @@ import com.educate.front.service.PersonService;
 import com.educate.mapper.PersonMapper;
 import com.educate.pojo.Person;
 
+
+/**
+ * 服务层的实现类，处理controller 与mapper 交互
+ * @author lin
+ * 
+ */
 public class PersonServiceImpl implements PersonService {
 
 	@Autowired
@@ -23,7 +29,6 @@ public class PersonServiceImpl implements PersonService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 
 	@Override
@@ -36,7 +41,6 @@ public class PersonServiceImpl implements PersonService {
 			e.printStackTrace();
 		}
 		
-		System.out.println("1++++++++++++++++++++好"+slist.get(0).getName());
 		return slist;
 	}
 

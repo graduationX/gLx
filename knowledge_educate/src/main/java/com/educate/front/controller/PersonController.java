@@ -11,9 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.educate.front.service.PersonService;
 import com.educate.pojo.Person;
 
-
+/**
+ * @author lin
+ * @param model 数据存入前端
+ * @return
+ */
 @Controller
 @RequestMapping("/front/person")
+
 public class PersonController {
 
 	@Autowired
@@ -25,10 +30,7 @@ public class PersonController {
 		List<Person> list =new ArrayList<>();
 		list =personService.selectlist();
 		model.addAttribute("slist", list);
-		System.out.println("++++++++++++++++++++好"+list.get(0).getName());
 		return "/page/list";
 	} 
-	
-	
 	
 }

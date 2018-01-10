@@ -6,6 +6,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+/**
+ *
+ * @author lin
+ *	数据库操作的接口
+ */
 public interface PersonMapper {
 
     int deleteByPrimaryKey(String personid);
@@ -21,5 +26,11 @@ public interface PersonMapper {
 
     int updateByPrimaryKey(Person record);
 
+    /**
+     * 查询学生列表
+     * @return  返回学生列表
+     * @throws Exception
+     * 
+     */
 	List<Person> selectList()throws Exception;
 }
