@@ -30,7 +30,7 @@ public interface PersonMapper {
      * 查询学生列表
      * @return  返回学生列表
      * @throws Exception
-     * 
+     * ceshi
      */
 	List<Person> selectList()throws Exception;
 }
