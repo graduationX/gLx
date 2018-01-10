@@ -24,7 +24,6 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
-	
 	@RequestMapping("personList")
 	public String personList(Model model){
 		List<Person> list =new ArrayList<>();
