@@ -31,7 +31,7 @@
 		<!-- 配置jsp路径的前缀 -->
 		<property name="prefix" value="/"/>
 		<!-- 配置jsp路径的后缀 -->
-		<property name="suffix" value=".jsp"/>
+		<property name="suffix" value=".html"/>
 	</bean>
 	
 	<!-- 自定义参数绑定 -->

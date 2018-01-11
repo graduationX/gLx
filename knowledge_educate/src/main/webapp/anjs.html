@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>anjs.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script src="js/angular.min.js" type="text/javascript"></script>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <!-- <body >
+  
+    This is my HTML page. 
+    <div  >
+    	商品名：{{goods.data.title}}
+    </div>
+    <script  type="text/javascript" >
+    	var m=angular.module('hd',[]);
+    	m.controller('ctrl',['$scope',function($scope){
+    		$scope.goods={
+    				data:{'title':'这个'}
+    		}
+    	}])
+    </script>
+  </body> -->
+  
+  <body ng-app="myAppDemo" ng-controller="myAppController">
+<!-- 这是我们自定义的指令 -->
+<breadcrumb data='{{pathData}}'></breadcrumb>
+<script>
+//声明我们的模块  myApp
+let myApp = angular.module('myAppDemo', []);
+/*在模块写创建一个控制器 myAppController*/
+myApp.controller('myAppController', ['$scope', function($scope){
+/*定义一个数组*/
+$scope.pathData = {
+first:'#',
+second:'#',
+third:'#',
+fourth:'#',
+};
+}]);
+
+
+//定义一个面包屑导航指令
+myApp.directive('breadcrumb', [function(){
+/*返回指令对象*/
+return{
+scope:{},
+templateUrl:'temps/breadcrumb.html',
+replace:true,
+link:function(scope, element, attributes){
+scope.data = JSON.parse(attributes.data);
+
+console.log(scope.data);
+}
+};
+}]);
+</script>
+</body>
+</html>
