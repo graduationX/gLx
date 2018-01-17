@@ -37,15 +37,7 @@
     <!-- END: load jquery -->
     <script src="js/angular.min.js" type="text/javascript"></script>
     <script src="js/setup.js" type="text/javascript"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            setupLeftMenu();
-
-            $('.datatable').dataTable();
-			setSidebarHeight();
-        });
-    </script>
+    
     <style >
     	.ng-cloak{
     	display: none;
@@ -54,11 +46,12 @@
     <script type="text/javascript">
     	
     </script>
-  
+ 
+                   
 </head>
 
-<body ng-app="hd" ng-cloak class="ng-cloak">
-    <div ng-controller="ctrl"  class="container_12" >
+<body >
+    <div   class="container_12" >
         <div class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft">
@@ -73,7 +66,7 @@
                             <li><a href="#">Logout</a></li>
                         </ul>
                         <br />
-                        <span class="small grey">Last Login: {{goods.data.title}}</span>
+                        <span class="small grey">Last Login:</span>
                     </div>
                 </div>
                 <div class="clear">
@@ -157,428 +150,27 @@
                 <h2>
                     Tables & Grids</h2>
                 <div class="block">
-                    
-                    
-                    
-                    <table class="data display datatable" id="example">
+                    <table ng-app="lm" class="data display datatable" id="example">
 					<thead>
-						<tr>
-							<th>Rendering engine</th>
-							<th>Browser</th>
-							<th>Platform(s)</th>
-							<th>Engine version</th>
-							<th>CSS grade</th>
+						<tr >
+							<th>学号</th>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>年龄</th>
+							<th>班级</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr class="odd gradeX">
-							<td>Trident</td>
-							<td>Internet
-								 Explorer 4.0</td>
-							<td>Win 95+</td>
-							<td class="center"> 4</td>
-							<td class="center">X</td>
+					<tbody ng-controller="linctrl" ng-cloak calss="ng-cloak">
+						<tr ng-repeat="v in data" class="odd gradeX">
+							<td>{{v.name}}</td>
+							<td>{{v.sex}}</td>
+							<td>{{v.password}}</td>
+							<td class="center">{{v.birthday}}</td>
+							<td class="center"><span ng-bind="v.birthday"></span></td>
 						</tr>
-						<tr class="even gradeC">
-							<td>Trident</td>
-							<td>Internet
-								 Explorer 5.0</td>
-							<td>Win 95+</td>
-							<td class="center">5</td>
-							<td class="center">C</td>
-						</tr>
-						<tr class="odd gradeA">
-							<td>Trident</td>
-							<td>Internet
-								 Explorer 5.5</td>
-							<td>Win 95+</td>
-							<td class="center">5.5</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="even gradeA">
-							<td>Trident</td>
-							<td>Internet
-								 Explorer 6</td>
-							<td>Win 98+</td>
-							<td class="center">6</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="odd gradeA">
-							<td>Trident</td>
-							<td>Internet Explorer 7</td>
-							<td>Win XP SP2+</td>
-							<td class="center">7</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="even gradeA">
-							<td>Trident</td>
-							<td>AOL browser (AOL desktop)</td>
-							<td>Win XP</td>
-							<td class="center">6</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Firefox 1.0</td>
-							<td>Win 98+ / OSX.2+</td>
-							<td class="center">1.7</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Firefox 1.5</td>
-							<td>Win 98+ / OSX.2+</td>
-							<td class="center">1.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Firefox 2.0</td>
-							<td>Win 98+ / OSX.2+</td>
-							<td class="center">1.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Firefox 3.0</td>
-							<td>Win 2k+ / OSX.3+</td>
-							<td class="center">1.9</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Camino 1.0</td>
-							<td>OSX.2+</td>
-							<td class="center">1.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Camino 1.5</td>
-							<td>OSX.3+</td>
-							<td class="center">1.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Netscape 7.2</td>
-							<td>Win 95+ / Mac OS 8.6-9.2</td>
-							<td class="center">1.7</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Netscape Browser 8</td>
-							<td>Win 98SE+</td>
-							<td class="center">1.7</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Netscape Navigator 9</td>
-							<td>Win 98+ / OSX.2+</td>
-							<td class="center">1.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.0</td>
-							<td>Win 95+ / OSX.1+</td>
-							<td class="center">1</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.1</td>
-							<td>Win 95+ / OSX.1+</td>
-							<td class="center">1.1</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.2</td>
-							<td>Win 95+ / OSX.1+</td>
-							<td class="center">1.2</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.3</td>
-							<td>Win 95+ / OSX.1+</td>
-							<td class="center">1.3</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.4</td>
-							<td>Win 95+ / OSX.1+</td>
-							<td class="center">1.4</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.5</td>
-							<td>Win 95+ / OSX.1+</td>
-							<td class="center">1.5</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.6</td>
-							<td>Win 95+ / OSX.1+</td>
-							<td class="center">1.6</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.7</td>
-							<td>Win 98+ / OSX.1+</td>
-							<td class="center">1.7</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Mozilla 1.8</td>
-							<td>Win 98+ / OSX.1+</td>
-							<td class="center">1.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Seamonkey 1.1</td>
-							<td>Win 98+ / OSX.2+</td>
-							<td class="center">1.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Gecko</td>
-							<td>Epiphany 2.20</td>
-							<td>Gnome</td>
-							<td class="center">1.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Webkit</td>
-							<td>Safari 1.2</td>
-							<td>OSX.3</td>
-							<td class="center">125.5</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Webkit</td>
-							<td>Safari 1.3</td>
-							<td>OSX.3</td>
-							<td class="center">312.8</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Webkit</td>
-							<td>Safari 2.0</td>
-							<td>OSX.4+</td>
-							<td class="center">419.3</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Webkit</td>
-							<td>Safari 3.0</td>
-							<td>OSX.4+</td>
-							<td class="center">522.1</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Webkit</td>
-							<td>OmniWeb 5.5</td>
-							<td>OSX.4+</td>
-							<td class="center">420</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Webkit</td>
-							<td>iPod Touch / iPhone</td>
-							<td>iPod</td>
-							<td class="center">420.1</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Webkit</td>
-							<td>S60</td>
-							<td>S60</td>
-							<td class="center">413</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Opera 7.0</td>
-							<td>Win 95+ / OSX.1+</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Opera 7.5</td>
-							<td>Win 95+ / OSX.2+</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Opera 8.0</td>
-							<td>Win 95+ / OSX.2+</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Opera 8.5</td>
-							<td>Win 95+ / OSX.2+</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Opera 9.0</td>
-							<td>Win 95+ / OSX.3+</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Opera 9.2</td>
-							<td>Win 88+ / OSX.3+</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Opera 9.5</td>
-							<td>Win 88+ / OSX.3+</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Opera for Wii</td>
-							<td>Wii</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Nokia N800</td>
-							<td>N800</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Presto</td>
-							<td>Nintendo DS browser</td>
-							<td>Nintendo DS</td>
-							<td class="center">8.5</td>
-							<td class="center">C/A<sup>1</sup></td>
-						</tr>
-						<tr class="gradeC">
-							<td>KHTML</td>
-							<td>Konqureror 3.1</td>
-							<td>KDE 3.1</td>
-							<td class="center">3.1</td>
-							<td class="center">C</td>
-						</tr>
-						<tr class="gradeA">
-							<td>KHTML</td>
-							<td>Konqureror 3.3</td>
-							<td>KDE 3.3</td>
-							<td class="center">3.3</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeA">
-							<td>KHTML</td>
-							<td>Konqureror 3.5</td>
-							<td>KDE 3.5</td>
-							<td class="center">3.5</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeX">
-							<td>Tasman</td>
-							<td>Internet Explorer 4.5</td>
-							<td>Mac OS 8-9</td>
-							<td class="center">-</td>
-							<td class="center">X</td>
-						</tr>
-						<tr class="gradeC">
-							<td>Tasman</td>
-							<td>Internet Explorer 5.1</td>
-							<td>Mac OS 7.6-9</td>
-							<td class="center">1</td>
-							<td class="center">C</td>
-						</tr>
-						<tr class="gradeC">
-							<td>Tasman</td>
-							<td>Internet Explorer 5.2</td>
-							<td>Mac OS 8-X</td>
-							<td class="center">1</td>
-							<td class="center">C</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Misc</td>
-							<td>NetFront 3.1</td>
-							<td>Embedded devices</td>
-							<td class="center">-</td>
-							<td class="center">C</td>
-						</tr>
-						<tr class="gradeA">
-							<td>Misc</td>
-							<td>NetFront 3.4</td>
-							<td>Embedded devices</td>
-							<td class="center">-</td>
-							<td class="center">A</td>
-						</tr>
-						<tr class="gradeX">
-							<td>Misc</td>
-							<td>Dillo 0.8</td>
-							<td>Embedded devices</td>
-							<td class="center">-</td>
-							<td class="center">X</td>
-						</tr>
-						<tr class="gradeX">
-							<td>Misc</td>
-							<td>Links</td>
-							<td>Text only</td>
-							<td class="center">-</td>
-							<td class="center">X</td>
-						</tr>
-						<tr class="gradeX">
-							<td>Misc</td>
-							<td>Lynx</td>
-							<td>Text only</td>
-							<td class="center">-</td>
-							<td class="center">X</td>
-						</tr>
-						<tr class="gradeC">
-							<td>Misc</td>
-							<td>IE Mobile</td>
-							<td>Windows Mobile 6</td>
-							<td class="center">-</td>
-							<td class="center">C</td>
-						</tr>
-						<tr class="gradeC">
-							<td>Misc</td>
-							<td>PSP browser</td>
-							<td>PSP</td>
-							<td class="center">-</td>
-							<td class="center">C</td>
-						</tr>
-						<tr class="gradeU">
-							<td>Other browsers</td>
-							<td>All others</td>
-							<td>-</td>
-							<td class="center">-</td>
-							<td class="center">U</td>
-						</tr>
+						
 					</tbody>
 				</table>
-                    
-                    
-                    
                 </div>
             </div>
         </div>
@@ -592,7 +184,7 @@
             Copyright <a href="#">BlueWhale Admin</a>. All Rights Reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
         </p>
     </div>
- 	 <script  type="text/javascript" >
+ 	<!--  <script  type="text/javascript" >
  
     	var m=angular.module('hd',[]);
     	m.controller('ctrl',['$scope',function($scope){
@@ -600,6 +192,45 @@
     				data:{'title':'这个'}
     		}
     	}])
+    </script> -->
+ <script type="text/javascript">
+ var m =angular.module('lm',[]);
+  m.controller('linctrl',['$scope','$http',function($scope,$http){
+	 $http({
+		method:'get',
+		url:'page/front/person/personList.action'
+	  }).then(function(response){
+		  console.log(response);
+		  $scope.data=response.data;
+		  
+	  },function(response){
+		  
+		  alert("错");
+	  }); 
+  }]);
+  //完美解决jQuery与angular.js执行顺序问题
+  m.run(function ($timeout) {//等待AngularJS加载完成之后触发事件  
+      var a = $timeout(function () {
+    	  setupLeftMenu();
+          $('.datatable').dataTable();
+    	  setSidebarHeight();
+          alert($('table tr').length);  
+      }, 1000);  
+  }); 
+  </script>
+ 
+  <script type="text/javascript">
+  
+  angular.element(document).ready(function () {
+	
+	  alert("加载完毕");
+	 });
+  
+ /*  	(function () {
+	  setupLeftMenu();
+      $('.datatable').dataTable();
+	  setSidebarHeight();
+  });  */
     </script>
 </body>
 
