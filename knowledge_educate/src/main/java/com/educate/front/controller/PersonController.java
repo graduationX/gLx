@@ -38,6 +38,7 @@ public class PersonController {
 		List<Person> list =new ArrayList<>();
 		list =personService.selectlist();
 		return  JSON.toJSONString(list);
+		
 	} 
 	
 }

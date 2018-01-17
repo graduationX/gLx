@@ -1,10 +1,21 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Charts | BlueWhale Admin</title>
-   
-    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+    <title>Typography | BlueWhale Admin</title>
+   <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
@@ -12,7 +23,7 @@
     <!--[if IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css" media="screen" /><![endif]-->
     <!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
     <!-- BEGIN: load jquery -->
-    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery-ui/jquery.ui.core.min.js"></script>
     <script src="js/jquery-ui/jquery.ui.widget.min.js" type="text/javascript"></script>
     <script src="js/jquery-ui/jquery.ui.accordion.min.js" type="text/javascript"></script>
@@ -34,24 +45,17 @@
     <script type="text/javascript" src="js/jqPlot/plugins/jqplot.bubbleRenderer.min.js"></script>
     <!-- END: load jqplot -->
     <script src="js/setup.js" type="text/javascript"></script>
-    <script type="text/javascript">
+  <script type="text/javascript">
 
         $(document).ready(function () {
-
-            drawPointsChart('points-chart');
-            drawDonutChart('donuts-chart');
-            drawBarchart('bar-chart');
-            drawBubbleChart('bubble-chart');
             setupLeftMenu();
-			setSidebarHeight();
+
+          			setSidebarHeight();
         });
     </script>
-    
-    <script type="text/javascript">
-    var hd=angular.module('hd',[])
-    </script>
+
 </head>
-<body >
+<body>
     <div class="container_12">
         <div class="grid_12 header-repeat">
             <div id="branding">
@@ -143,49 +147,42 @@
                             </ul>
                         </li>
                     </ul>
-                    
-                    
                 </div>
             </div>
         </div>
-        
-        
         <div class="grid_10">
-        	<div class="box round first">
-        		 <h2> Charts</h2>
-                  <div id="bar-chart">
-                    </div>
-            </div>     
-        </div>
-        
-        <div class="grid_10">
-            <div class="box round">
-                <h2> Charts</h2>
+            <div class="box round first">
+                <h2>Notifications</h2>
+                
                 <div class="block">
-                    <div id="points-chart">
-                    </div>
-                </div>
+            
+                            <div class="message info">
+                                <h5>Information</h5>
+                                <p>
+                                    This is an info message.
+                                </p>
+                            </div>
+                            <div class="message success">
+                                <h5>Success!</h5>
+                                <p>
+                                    This is a success message.
+                                </p>
+                            </div>
+                            <div class="message warning">
+                                <h5>Warning!</h5>
+                                <p>
+                                    This is a warning message.
+                                </p>
+                            </div>
+                            <div class="message error">
+                                <h5>Error!</h5>
+                                <p>
+                                    This is an error message.
+                                </p>
+                            </div>
+                        </div>
+                
             </div>
-        </div>
-        
-        
-        
-        <div class="grid_5">
-        	<div class="box round">
-        		 <h2> Charts</h2>
-                 <div id="donuts-chart">
-                	<div>这会是一个饼图</div>
-                    </div>
-            </div>     
-        </div>
-      
-        
-        <div class="grid_5">
-        	<div class="box round">
-        		 <h2> Charts</h2>
-                  <div id="bubble-chart">
-                    </div>
-            </div>     
         </div>
         <div class="clear">
         </div>
@@ -197,7 +194,6 @@
             Copyright <a href="#">BlueWhale Admin</a>. All Rights Reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
         </p>
     </div>
-  
+    
 </body>
-
 </html>

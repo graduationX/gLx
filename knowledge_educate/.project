@@ -46,6 +46,11 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+			<name>org.zeroturnaround.eclipse.rebelXmlBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
@@ -61,5 +66,6 @@
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 		<nature>tern.eclipse.ide.core.ternnature</nature>
 		<nature>org.eclipse.angularjs.core.angularnature</nature>
+		<nature>org.zeroturnaround.eclipse.jrebelNature</nature>
 	</natures>
 </projectDescription>

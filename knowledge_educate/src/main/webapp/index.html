@@ -43,11 +43,19 @@
     <script type="text/javascript">
     	
     </script>
-   
+    	<script  type="text/javascript" >
+ 
+    	var m=angular.module('hd',[]);
+    	m.controller('ctrl',['$scope',function($scope){
+    		$scope.goods={
+    				data:{'title':'这个'}
+    		}
+    	}])
+    </script>
 </head>
 
-<body ng-app="hd"  class="ng-cloak">
-    <div   class="container_12" ng-controller="ctrl">
+<body >
+    <div   class="container_12" >
         <div class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft">
@@ -70,7 +78,7 @@
             </div>
         </div>
         <div class="clear">
-        </div>
+        </div> 
         <div class="grid_12">
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="dashboard.html"><span>Dashboard</span></a> </li>
@@ -581,14 +589,6 @@
             Copyright <a href="#">BlueWhale Admin</a>. All Rights Reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
         </p>
     </div>
- 	<script  type="text/javascript" >
-    	var m=angular.module('hd',[]);
-    	m.controller('ctrl',['$scope',function($scope){
-    		$scope.goods={
-    				data:{'title':'这个'}
-    		}
-    	}])
-    </script>
 </body>
 
 </html>
