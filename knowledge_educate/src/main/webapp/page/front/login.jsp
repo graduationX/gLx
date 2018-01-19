@@ -5,23 +5,63 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'login.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-  </head>
-  <body>
-   <div></div>
-  </body>
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Amaze UI Examples</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/amazeui.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/app.css">
+</head>
+<body>
+<div class="am-g myapp-login">
+	<div class="myapp-login-logo-block">
+		<div class="myapp-login-logo">
+			<i class="am-icon-jsfiddle"></i>
+		</div>
+		<div class="myapp-login-logo-text">
+			<div class="myapp-login-logo-text">
+				Js<span>Fiddle</span>
+				<div class="info">Find the best places in town.</div>
+			</div>
+		</div>
+
+		<div class="login-font">
+			<i>Log In </i> or <span> Sign Up</span>
+		</div>
+		<div class="am-u-sm-10 login-am-center">
+			<form class="am-form">
+				<fieldset>
+					<div class="am-form-group">
+						<input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
+					</div>
+
+					<div class="am-form-group">
+						<input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
+					</div>
+					<p><button type="submit" class="am-btn am-btn-default">Log In</button></p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+moban <a>liu</a> -  More Templates  <a title="网页模板" target="_blank">学生管理</a>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="${pageContext.request.contextPath }/js/amazeui.min.js"></script>
+<script src="${pageContext.request.contextPath }/js/app.js"></script>
+</body>
 </html>
