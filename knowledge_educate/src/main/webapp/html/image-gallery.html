@@ -1,28 +1,18 @@
-﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Typography | BlueWhale Admin</title>
-   <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+    <title>Pretty Photo | BlueWhale Admin</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
+    <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
     <!--[if IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css" media="screen" /><![endif]-->
     <!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
     <!-- BEGIN: load jquery -->
+    <script src="" type="text/javascript"></script>
     <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery-ui/jquery.ui.core.min.js"></script>
     <script src="js/jquery-ui/jquery.ui.widget.min.js" type="text/javascript"></script>
@@ -30,34 +20,32 @@
     <script src="js/jquery-ui/jquery.effects.core.min.js" type="text/javascript"></script>
     <script src="js/jquery-ui/jquery.effects.slide.min.js" type="text/javascript"></script>
     <!-- END: load jquery -->
-    <!-- BEGIN: load jqplot -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css" />
-    <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="js/jqPlot/excanvas.min.js"></script><![endif]-->
-    <script language="javascript" type="text/javascript" src="js/jqPlot/jquery.jqplot.min.js"></script>
-    <script type="text/javascript" src="js/jqPlot/plugins/jqplot.canvasTextRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jqPlot/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.barRenderer.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.pieRenderer.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.highlighter.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.pointLabels.min.js"></script>
-    <script type="text/javascript" src="js/jqPlot/plugins/jqplot.donutRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jqPlot/plugins/jqplot.bubbleRenderer.min.js"></script>
-    <!-- END: load jqplot -->
+    <script src="js/pretty-photo/jquery.prettyPhoto.js" type="text/javascript"></script>
     <script src="js/setup.js" type="text/javascript"></script>
-  <script type="text/javascript">
+    <script type="text/javascript">
 
         $(document).ready(function () {
+            setupPrettyPhoto();
             setupLeftMenu();
+			setSidebarHeight();
 
-          			setSidebarHeight();
+
         });
     </script>
-
+    <script type="text/javascript">
+		var myApp= angular.module('myApp',[])
+		myApp.controller('ctrl',['$scope',function($scope){
+    		$scope.goods={
+    				data:{'title':'这个'}
+    		}
+    	}])
+    </script>
+   
 </head>
 <body>
-    <div class="container_12">
-        <div class="grid_12 header-repeat">
+<h1>{{goods.data.title}}</h1>
+    <div   class="container_12">
+        <div  class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft">
                     <img src="img/logo.png" alt="Logo" /></div>
@@ -152,36 +140,53 @@
         </div>
         <div class="grid_10">
             <div class="box round first">
-                <h2>Notifications</h2>
-                
-                <div class="block">
-            
-                            <div class="message info">
-                                <h5>Information</h5>
-                                <p>
-                                    This is an info message.
-                                </p>
-                            </div>
-                            <div class="message success">
-                                <h5>Success!</h5>
-                                <p>
-                                    This is a success message.
-                                </p>
-                            </div>
-                            <div class="message warning">
-                                <h5>Warning!</h5>
-                                <p>
-                                    This is a warning message.
-                                </p>
-                            </div>
-                            <div class="message error">
-                                <h5>Error!</h5>
-                                <p>
-                                    This is an error message.
-                                </p>
-                            </div>
-                        </div>
-                
+                    <h2>Gallery</h2>
+                    <div class="block">
+                    <ul class="prettygallery clearfix">
+                        <li><a href="img/pretty-photo/fullscreen/item1-full.jpg" rel="prettyPhoto[gallery2]"
+                            title="">
+                            <img src="img/pretty-photo/thumbnails/item1.jpg" alt="This is a pretty long title" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item2-full.jpg" rel="prettyPhoto[gallery2]"
+                            title="Description on a single line.">
+                            <img src="img/pretty-photo/thumbnails/item2.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item3-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item3.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item4-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item4.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item5-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item5.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item6-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item6.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item7-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item7.jpg"  alt="" /></a></li>
+                            
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item8-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item8.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item9-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item9.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item10-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item10.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item11-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item11.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item12-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item12.jpg"  alt="" /></a></li>
+                            
+                        <li><a href="img/pretty-photo/fullscreen/item13-full.png" rel="prettyPhoto[gallery2]">
+                            <img src="img/pretty-photo/thumbnails/item13.jpg"  alt="" /></a></li>
+                            
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="clear">
@@ -194,6 +199,5 @@
             Copyright <a href="#">BlueWhale Admin</a>. All Rights Reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
         </p>
     </div>
-    
 </body>
 </html>
