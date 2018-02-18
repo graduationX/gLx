@@ -32,6 +32,15 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
+	
+	/**
+	 * 
+	 * 学生列表查询
+	 * @param session
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	@RequestMapping(value = "/personList", method = RequestMethod.GET)
 	public @ResponseBody String personList(HttpSession session,HttpServletRequest request,
 			HttpServletResponse response){
@@ -40,5 +49,7 @@ public class PersonController {
 		return  JSON.toJSONString(list);
 		
 	} 
+	
+	
 	
 }
