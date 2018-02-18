@@ -60,30 +60,30 @@
  <div class="clear"> </div>      
  <jsp:include page="/page/front/menu.jsp"></jsp:include>
             <div class="box round first">
-                <h2>Notifications</h2>
+                <h2>开头</h2>
                 
                 <div class="block">
             
                             <div class="message info">
-                                <h5>Information</h5>
+                                <h5>我</h5>
                                 <p>
                                     This is an info message.
                                 </p>
                             </div>
                             <div class="message success">
-                                <h5>Success!</h5>
+                                <h5>听见</h5>
                                 <p>
                                     This is a success message.
                                 </p>
                             </div>
                             <div class="message warning">
-                                <h5>Warning!</h5>
+                                <h5>雨滴</h5>
                                 <p>
                                     This is a warning message.
                                 </p>
                             </div>
                             <div class="message error">
-                                <h5>Error!</h5>
+                                <h5>罗</h5>
                                 <p>
                                     This is an error message.
                                 </p>
