@@ -57,7 +57,7 @@
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>
-                    Tables & Grids</h2>
+                    学生信息</h2>
                 <div class="block">
                     <table ng-app="lm" class="data display datatable" id="example">
 					<thead>
