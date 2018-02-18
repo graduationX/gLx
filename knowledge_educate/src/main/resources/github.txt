@@ -1,2 +1,3 @@
 https://github.com/graduationX/gLx.git
 974019777@qq.com
+localhost
