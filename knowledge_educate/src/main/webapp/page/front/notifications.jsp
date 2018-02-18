@@ -77,7 +77,7 @@
                                 </p>
                             </div>
                             <div class="message warning">
-                                <h5>雨滴</h5>
+                                <h5>雨</h5>
                                 <p>
                                     This is a warning message.
                                 </p>
