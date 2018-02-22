@@ -8,6 +8,11 @@ import org.apache.ibatis.annotations.Param;
 import com.educate.pojo.Teacher;
 import com.educate.pojo.TeacherExample;
 
+/**
+ * teacher Mapper接口
+ * @author lin
+ *
+ */
 public interface TeacherMapper {
     int countByExample(TeacherExample example);
 
@@ -31,5 +36,7 @@ public interface TeacherMapper {
 
     int updateByPrimaryKey(Teacher record);
     
-    Teacher findByTeaid(String id);
+    Teacher findByTeaid(String id );
+    
+    Teacher findByTname(String tname);
 }

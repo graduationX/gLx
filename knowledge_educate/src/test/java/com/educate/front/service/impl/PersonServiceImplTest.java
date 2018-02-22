@@ -14,8 +14,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.educate.front.service.PersonService;
+import com.educate.front.service.TeacherService;
 import com.educate.mapper.PersonMapper;
 import com.educate.pojo.Person;
+import com.educate.pojo.Teacher;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -24,6 +26,9 @@ public class PersonServiceImplTest {
 
 	@Autowired
 	private PersonService personService;
+	
+	@Autowired
+	private TeacherService teacherService;
 	
 	@Test
 	public void testPersonInsert() {
@@ -37,5 +42,13 @@ public class PersonServiceImplTest {
 		personService.personInsert(person);
 		
 	}
+
+	@Test
+	public void testTeacher(){
+		Teacher teacher =new Teacher();
+		teacher =teacherService.findtea("123");
+		System.out.println("============="+teacher.toString());
+	}
+	
 
 }

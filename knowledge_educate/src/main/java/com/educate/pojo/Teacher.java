@@ -60,4 +60,13 @@ public class Teacher {
     public void setTclass(String tclass) {
         this.tclass = tclass == null ? null : tclass.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Teacher [tid=" + tid + ", tname=" + tname + ", tsex=" + tsex
+				+ ", tphone=" + tphone + ", tnamed=" + tnamed + ", tclass="
+				+ tclass + "]";
+	}
+    
+    
 }

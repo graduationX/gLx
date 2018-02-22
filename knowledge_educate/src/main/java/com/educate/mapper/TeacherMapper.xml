@@ -226,9 +226,14 @@
     where Tid = #{tid,jdbcType=VARCHAR}
   </update>
  
- <select id="findByTeaid" parameterType="string">
+ <select id="findByTeaid" parameterType="string" resultType="com.educate.pojo.Teacher" >
  	select * from Teacher 
  	where tid = #{id}
+ </select>
+  
+ <select id="findByTname" parameterType="string" resultType="com.educate.pojo.Teacher">
+    select * from Teacher
+    where tname = #{tname}
  </select>
   
 </mapper>
