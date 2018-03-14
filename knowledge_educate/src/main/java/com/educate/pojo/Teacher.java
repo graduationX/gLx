@@ -12,6 +12,11 @@ public class Teacher {
     private String tnamed;
 
     private String tclass;
+    
+    private String password;
+
+    private String userCode;
+    
 
     public String getTid() {
         return tid;
@@ -61,6 +66,28 @@ public class Teacher {
         this.tclass = tclass == null ? null : tclass.trim();
     }
 
+    
+    
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
+	
+	public String getUserCode() {
+		return userCode;
+	}
+
+	public void setUserCode(String userCode) {
+		this.userCode = userCode;
+	}
+
+	
+
 	@Override
 	public String toString() {
 		return "Teacher [tid=" + tid + ", tname=" + tname + ", tsex=" + tsex
@@ -68,5 +95,6 @@ public class Teacher {
 				+ tclass + "]";
 	}
     
+	
     
 }

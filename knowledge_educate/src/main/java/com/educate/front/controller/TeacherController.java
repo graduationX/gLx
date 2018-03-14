@@ -1,5 +1,9 @@
 package com.educate.front.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -9,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
+import com.educate.exception.CustomException;
 import com.educate.front.service.TeacherService;
 import com.educate.pojo.Teacher;
 
@@ -48,4 +53,33 @@ public class TeacherController {
 		System.out.println("============"+teacher.getTname());
 		return JSON.toJSONString(teacher);
 	}
+   
+ //登陆提交路径 和配置文件路径一致
+   @RequestMapping(value="/login")
+   public String shiroLogin(HttpServletRequest request) throws Exception {
+	   
+	   //登陆失败获取失败信息
+	  // CustomException customException =new CustomException();
+	   String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
+	  // shiro在认证过程中出现错误后将异常类路径通过request返回
+	//   CustomException exception =new CustomException(message);
+	   if(exceptionClassName!=null) {
+		
+		if (UnknownAccountException.class.getName().equals(exceptionClassName)) {
+			throw new CustomException("账号不存在");
+			//return null;
+			
+		} else if (IncorrectCredentialsException.class.getName().equals(
+				exceptionClassName)) {
+			throw new CustomException("用户名/密码错误");
+			//return null;
+			 
+		} else{	
+			throw new Exception();//最终在异常处理器生成未知错误
+			//return null;
+		}
+	   }
+	   //登陆失败回到当前页面
+	   return "page/login";
+   }
 }
