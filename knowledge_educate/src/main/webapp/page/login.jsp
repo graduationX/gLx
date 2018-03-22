@@ -37,14 +37,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<i>Log In </i> or <span> Sign Up</span>
 		</div>
 		<div class="am-u-sm-10 login-am-center">
-			<form class="am-form">
+			<form class="am-form" method="post">
 				<fieldset>
 					<div class="am-form-group">
-						<input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
+						<input type="text" name="username" class="" id="doc-ipt-email-1" placeholder="输入用户名">
 					</div>
 
 					<div class="am-form-group">
-						<input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
+						<input type="password" name="password" class="" id="doc-ipt-pwd-1" placeholder="输入密码">
 					</div>
 					<p><button type="submit" class="am-btn am-btn-default">Log In</button></p>
 				</fieldset>
@@ -52,9 +52,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 </div>
-moban <a>liu</a> -  More Templates  <a title="网页模板" target="_blank">学生管理</a>
+<div><center> moban <a>liu</a> -  More Templates  <a title="网页模板" target="_blank">学生管理</a></center>
+ </div>
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath }js/jquery.min.js"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
