@@ -35,6 +35,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<div class="login-font">
 			<i>Log In </i> or <span> Sign Up</span>
+			<c:if test="${not empty msg}">
+			<div><span style="color: red; size: 90px;"> <font size="5">${msg}</font></span> </div>
+			</c:if>
+			
 		</div>
 		<div class="am-u-sm-10 login-am-center">
 			<form class="am-form" method="post">
@@ -49,6 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p><button type="submit" class="am-btn am-btn-default">Log In</button></p>
 				</fieldset>
 			</form>
+			
 		</div>
 	</div>
 </div>

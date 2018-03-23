@@ -32,7 +32,7 @@
                         <ul class="inline-ul floatleft">
                             <li>Hello Admin</li>
                             <li><a href="${pageContext.request.contextPath }/#">Config</a></li>
-                            <li><a href="${pageContext.request.contextPath }/page/front/login.jsp">Logout</a></li>
+                            <li><a href="${pageContext.request.contextPath }/logout.action">Logout</a></li>
                         </ul>
                         <br />
                         <span class="small grey">Last Login: 3 hours ago</span>
