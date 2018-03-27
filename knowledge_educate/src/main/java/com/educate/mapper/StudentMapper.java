@@ -2,6 +2,9 @@ package com.educate.mapper;
 
 import com.educate.pojo.Student;
 import com.educate.pojo.StudentExample;
+import com.educate.pojo.StudentQuery;
+import com.github.pagehelper.Page;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +30,6 @@ public interface StudentMapper {
     int updateByPrimaryKeySelective(Student record);
 
     int updateByPrimaryKey(Student record);
+    
+    Page<Student> stulist(StudentQuery key)throws Exception;
 }

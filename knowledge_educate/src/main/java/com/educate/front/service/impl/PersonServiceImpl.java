@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.educate.front.service.PersonService;
 import com.educate.mapper.PersonMapper;
 import com.educate.pojo.Person;
+import com.educate.pojo.Student;
+import com.educate.util.pagehelper.PageInfo;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 
 
 /**
@@ -32,16 +36,27 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	@Override
-	public List<Person> selectlist() {
+	public Page<Person> selectlist(int pageNo, int pageSize) {
+		/*PageInfo<Person> stuPage =new PageInfo<>();
 		List<Person> slist=new ArrayList<>();
 		try {
-			slist=	personMapper.selectList();
+			
+			PageHelper.startPage(pageNo, pageSize);
+			stuPage =personMapper.selectList();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		PageHelper.startPage(pageNo, pageSize);
+		
+		Page<Person> page =new Page<>();
+		try {
+			page =personMapper.selectList();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return slist;
+		return page;
 	}
 
 }

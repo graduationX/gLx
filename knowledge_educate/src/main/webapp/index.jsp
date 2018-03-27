@@ -65,17 +65,20 @@
 							<th>学号</th>
 							<th>姓名</th>
 							<th>性别</th>
-							<th>年龄</th>
+							<th>出生年月</th>
 							<th>班级</th>
+							<th>操作</th>
 						</tr>
 					</thead>
 					<tbody ng-controller="linctrl" ng-cloak calss="ng-cloak">
 						<tr ng-repeat="v in data" class="odd gradeX">
-							<td>{{v.name}}</td>
-							<td>{{v.sex}}</td>
-							<td>{{v.password}}</td>
-							<td class="center">{{v.birthday}}</td>
-							<td class="center"><span ng-bind="v.birthday"></span></td>
+							<td>{{v.sid}}</td>
+							<td>{{v.sname}}</td>
+							<td>{{v.ssex}}　</td>
+							　
+							<td class="center">{{v.birth}}</td>
+							<td class="center"><span ng-bind="v.sclass"></span></td>
+							<td><input id="updateo" type="submit" value="修改" /></td>
 						</tr>
 						
 					</tbody>
@@ -107,7 +110,8 @@
   m.controller('linctrl',['$scope','$http',function($scope,$http){
 	 $http({
 		method:'get',
-		url:'page/front/person/personList.action'
+		params:{key:"5-2"},
+		url:'page/front/student/stulist.action'
 	  }).then(function(response){
 		  console.log(response);
 		  $scope.data=response.data;
@@ -124,13 +128,18 @@
           $('.datatable').dataTable();
     	  setSidebarHeight();
           //alert($('table tr').length);  
+          $(function(){
+
+		$("#updateo").click(function(){
+			alert("s");
+		 });
+	 })
       }, 1000);  
   }); 
   </script>
  
   <script type="text/javascript">
   
- 
  /*  	(function () {
 	  setupLeftMenu();
       $('.datatable').dataTable();

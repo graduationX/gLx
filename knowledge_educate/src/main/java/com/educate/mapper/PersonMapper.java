@@ -1,6 +1,9 @@
 package com.educate.mapper;
 
 import com.educate.pojo.Person;
+import com.educate.pojo.Student;
+import com.educate.util.pagehelper.PageInfo;
+import com.github.pagehelper.Page;
 
 import java.util.List;
 
@@ -32,5 +35,7 @@ public interface PersonMapper {
      * @throws Exception
      * ceshi
      */
-	List<Person> selectList()throws Exception;
-}
+    Page<Person>  selectList()throws Exception;
+    
+    List<Person>  findall()throws Exception;
+ }

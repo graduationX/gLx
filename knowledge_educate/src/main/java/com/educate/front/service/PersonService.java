@@ -3,6 +3,8 @@ package com.educate.front.service;
 import java.util.List;
 
 import com.educate.pojo.Person;
+import com.educate.util.pagehelper.PageInfo;
+import com.github.pagehelper.Page;
 
 /**
  * 
@@ -18,5 +20,5 @@ public interface PersonService {
 	 * 
 	 * @return 学生列表
 	 */
-	public List<Person> selectlist();
+	public Page<Person> selectlist(int pageNo, int pageSize);
 }

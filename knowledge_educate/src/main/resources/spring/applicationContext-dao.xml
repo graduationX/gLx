@@ -43,6 +43,9 @@
 		<property name="dataSource" ref="dataSource" />
 		<!-- 加载mybatis的全局配置文件 -->
 		<property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml" />
+		 <!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->  
+   		
+   		<!-- <property name="configLocation" value="classpath:config/mybatis-config.xml"/>   -->
 	</bean>
 
 	<!-- mapper扫描器 -->

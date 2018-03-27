@@ -185,9 +185,18 @@
       sex = #{sex,jdbcType=VARCHAR}
     where personId = #{personid,jdbcType=VARCHAR}
   </update>
+  
    <select id="selectList" resultMap="BaseResultMap"  >
     select 
     <include refid="Base_Column_List" />
     from Person
   </select>
+  
+  <select id="findall" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from Person
+  </select>
+  
+  
 </mapper>

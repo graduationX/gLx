@@ -44,9 +44,10 @@ public class PersonController {
 	@RequestMapping(value = "/personList", method = RequestMethod.GET)
 	public @ResponseBody String personList(HttpSession session,HttpServletRequest request,
 			HttpServletResponse response){
-		List<Person> list =new ArrayList<>();
+	/*	List<Person> list =new ArrayList<>();
 		list =personService.selectlist();
-		return  JSON.toJSONString(list);
+		return  JSON.toJSONString(list);*/
+		return null;
 		
 	} 
 	
