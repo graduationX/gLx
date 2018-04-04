@@ -51,7 +51,7 @@
     <!--Fancy Button-->
     <script src="${pageContext.request.contextPath }/js/fancy-button/fancy-button.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath }/js/setup.js" type="text/javascript"></script>
-    <!-- Load TinyMCE -->
+    <!-- Load TinyMCE -->	
    	<script src="${pageContext.request.contextPath }/js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {

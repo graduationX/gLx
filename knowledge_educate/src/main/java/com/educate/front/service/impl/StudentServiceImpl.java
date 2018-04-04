@@ -9,6 +9,8 @@ import com.educate.front.service.StudentService;
 import com.educate.mapper.StudentMapper;
 import com.educate.pojo.Student;
 import com.educate.pojo.StudentQuery;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 
 public class StudentServiceImpl implements StudentService {
 
@@ -22,8 +24,9 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public List<Student> stuInfo(StudentQuery key) {
-		List<Student> list =new ArrayList<>();
+	public Page<Student> stuInfo(StudentQuery key) {
+		Page<Student> list =new Page<>();
+		PageHelper.startPage(key.getPageNum(),key.getPageSize());
 		try {
 			list = studentMapper.stulist(key);
 		} catch (Exception e) {
