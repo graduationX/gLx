@@ -34,8 +34,8 @@
     <script src="js/jquery-ui/jquery.ui.sortable.min.js" type="text/javascript"></script>
     <script src="js/table/jquery.dataTables.min.js" type="text/javascript"></script>
     <!-- END: load jquery -->
-<!--     <script src="js/angular.min.js" type="text/javascript"></script> -->
-	<script src="js/angular-1.5.8/angular.min.js" type="text/javascript"></script>
+	<script src="js/angular.min.js" type="text/javascript"></script> 
+
     <script src="js/setup.js" type="text/javascript"></script>
     
     <style >
